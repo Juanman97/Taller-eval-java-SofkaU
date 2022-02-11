@@ -1,5 +1,7 @@
 package com.sofkau.tallerjava;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -144,6 +146,21 @@ public class Funciones {
             System.out.println("Diferencias:");
             System.out.println("Palabra 1: " + difPalabra1);
             System.out.println("Palabra 2: " + difPalabra2);
+        }
+    }
+
+    public static void fechaYHoraActual(){
+        LocalDateTime fechaActual = LocalDateTime.now();
+        String formatoFecha = "(yyyy/MM/dd)(HH:MM:SS)";
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern(formatoFecha);
+        String fechaFormateada = fechaActual.format(formato);
+        System.out.println(fechaFormateada);
+    }
+
+    public static void hastaMil(int numero) {
+        while (numero <= 1000) {
+            System.out.println(numero);
+            numero += 2;
         }
     }
 }
