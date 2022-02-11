@@ -3,8 +3,10 @@ package com.sofkau.tallerjava;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
+
+import static com.sofkau.tallerjava.TallerMain.sc;
 
 public class Funciones {
 
@@ -162,5 +164,126 @@ public class Funciones {
             System.out.println(numero);
             numero += 2;
         }
+    }
+
+    public static void ejercicio16(){
+        System.out.print("Ingrese el nombre de la persona: ");
+        String nombre = sc.nextLine();
+        System.out.print("Ingrese la edad de la persona: ");
+        int edad = Integer.parseInt(sc.nextLine());
+        System.out.print("Ingrese el sexo de la persona (H/M): ");
+        char sexo = (sc.nextLine()).charAt(0);
+        System.out.print("Ingrese el peso de la persona: ");
+        double peso = Double.parseDouble(sc.nextLine());
+        System.out.print("Ingrese la altura de la persona: ");
+        double altura = Double.parseDouble(sc.nextLine());
+
+        Persona personaCompleta = new Persona(nombre, edad, sexo, peso, altura);
+        Persona personaSencilla = new Persona(nombre, edad, sexo);
+        Persona personaVacia = new Persona(); //se agregan sus atributos con los setters:
+        personaVacia.setNombre(nombre);
+        personaVacia.setEdad(edad);
+        personaVacia.setAltura(altura);
+        personaVacia.setPeso(peso);
+
+        int imc;
+        String mayor= "";
+        //PersonaCompleta:
+        System.out.println("Persona Completa:");
+        imc = personaCompleta.calcularIMC();
+        switch (imc) {
+            case -1:
+                System.out.println("Por debajo del peso ideal");
+                break;
+            case 0:
+                System.out.println("En el peso ideal");
+                break;
+            case 1:
+                System.out.println("En sobrepeso");
+                break;
+            default:
+                break;
+        }
+
+        mayor = (personaCompleta.esMayorDeEdad()) ? "es" : "no es";
+        System.out.println("La persona " + mayor + " mayor de edad");
+
+        System.out.println(personaCompleta);
+
+        //PersonaSencilla:
+        System.out.println("Persona Sencilla:");
+        imc = personaSencilla.calcularIMC();
+        switch (imc) {
+            case -1:
+                System.out.println("Por debajo del peso ideal");
+                break;
+            case 0:
+                System.out.println("En el peso ideal");
+                break;
+            case 1:
+                System.out.println("En sobrepeso");
+                break;
+            default:
+                break;
+        }
+
+        mayor = (personaSencilla.esMayorDeEdad()) ? "es" : "no es";
+        System.out.println("La persona " + mayor + " mayor de edad");
+
+        System.out.println(personaSencilla);
+
+        //PersonaVacia:
+        System.out.println("Persona Vacía:");
+        imc = personaVacia.calcularIMC();
+        switch (imc) {
+            case -1:
+                System.out.println("Por debajo del peso ideal");
+                break;
+            case 0:
+                System.out.println("En el peso ideal");
+                break;
+            case 1:
+                System.out.println("En sobrepeso");
+                break;
+            default:
+                break;
+        }
+
+        mayor = (personaVacia.esMayorDeEdad()) ? "es" : "no es";
+        System.out.println("La persona " + mayor + " mayor de edad");
+
+        System.out.println(personaVacia);
+    }
+
+    public static void ejercicio17(){
+
+        Lavadora lav1 = new Lavadora(100, "negro", 'D', 90, 35);
+        Lavadora lav2 = new Lavadora(80, "VERDE", 'C', 79, 30);
+        Lavadora lav3 = new Lavadora(70, "AZUL", 'B', 40, 40);
+        Lavadora lav4 = new Lavadora(50, 30);
+        Lavadora lav5 = new Lavadora(60, 35);
+
+        Television tv1 = new Television(100, "gris", 'A', 19, 32, true);
+        Television tv2 = new Television(200, "negro", 'A', 60, 41, true);
+        Television tv3 = new Television(150, "blanco", 'A', 55, 50, false);
+        Television tv4 = new Television(60, 52);
+        Television tv5 = new Television(40, 31);
+
+        ArrayList <Electrodomestico> electrodomesticos = new ArrayList<>(Arrays.asList(lav1, lav2, lav3, lav4, lav5, tv1, tv2, tv3, tv4, tv5));
+        double precioTv = 0;
+        double precioLav = 0;
+        double precioTotal = 0;
+        for (Electrodomestico electrodomestico : electrodomesticos){
+            if (electrodomestico instanceof Lavadora) {
+                precioLav += electrodomestico.precioBase;
+            } else if (electrodomestico instanceof Television) {
+                precioTv += electrodomestico.precioBase;
+            }
+            precioTotal += electrodomestico.precioBase;
+        }
+
+        System.out.println("El precio de las lavadoras es: " + precioLav);
+        System.out.println("El precio de los televisores es: " + precioTv);
+        System.out.println("El precio total es: " + precioTotal);
     }
 }

@@ -128,6 +128,11 @@ public class TallerMain {
 //            }
 //        }
 
+//        //Ejercicio 16
+//        Funciones.ejercicio16();
+
+//        //Ejercicio 17
+//        Funciones.ejercicio17();
 
         }
 }
