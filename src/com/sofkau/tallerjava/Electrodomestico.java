@@ -11,9 +11,9 @@ public class Electrodomestico {
     private char consumoEnergetico = 'F';
     private double peso = 5;
     private static final List<String> coloresDisponibles = new ArrayList<>
-            (Arrays.asList("blanco", "negro", "rojo", "azul", "gris"));
+            (Arrays.asList("blanco", "negro", "rojo", "azul", "gris")); //list de colores permitidos
     private static final List<Character> consumoEnergeticoDisponible = new ArrayList<>
-            (Arrays.asList('A', 'B', 'C', 'D', 'E', 'F'));
+            (Arrays.asList('A', 'B', 'C', 'D', 'E', 'F')); //list de consumo energético permitido
 
     //constructores
     public Electrodomestico() {
@@ -23,30 +23,30 @@ public class Electrodomestico {
     public Electrodomestico(double precioBase, double peso) {
         this.precioBase = precioBase;
         this.peso = peso;
-        precioFinal();
+        precioFinal(); //se aplica el método precioFinal al crear el objeto
     }
 
     public Electrodomestico(double precioBase, String color,
                             char consumoEnergetico, double peso) {
         this.precioBase = precioBase;
         this.peso = peso;
-        comprobarColor(color);
-        comprobarConsumoEnergetico(consumoEnergetico);
-        precioFinal();
+        comprobarColor(color); //comprueba que el color sea válido o si deja el default
+        comprobarConsumoEnergetico(consumoEnergetico); //comprueba que el consumo sea válido o si deja el default
+        precioFinal(); //aplica el método para modificar el precio
     }
 
     //métodos
     protected void comprobarConsumoEnergetico(char letra) {
         letra = Character.toUpperCase(letra);
         if (consumoEnergeticoDisponible.contains(letra)) {
-            this.consumoEnergetico = letra;
+            this.consumoEnergetico = letra; //si está en la lista de consumos válidos, la asigna, sino deja el default
         }
     }
 
     protected void comprobarColor(String color) {
         color = color.toLowerCase();
         if (coloresDisponibles.contains(color)) {
-            this.color = color;
+            this.color = color;//si está en la lista de colores válidos, lo asigna, sino deja el default
         }
 
     }

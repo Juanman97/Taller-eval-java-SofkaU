@@ -6,23 +6,23 @@ public class Television extends Electrodomestico{
 
     //constructores
     public Television() {
-        super();
-        super.precioFinal();
-        precioFinal();
+        super();//llama al constructor vacío del padre
+        super.precioFinal();//aplica el método de precioFinal del padre
+        precioFinal();//aplica el método de precioFinal propio sobreescrito
     }
 
     public Television(double precioBase, double peso) {
-        super(precioBase, peso);
-        super.precioFinal();
-        precioFinal();
+        super(precioBase, peso);//llama al constructor sencillo del padre
+        super.precioFinal();//aplica el método de precioFinal del padre
+        precioFinal();//aplica el método de precioFinal propio sobreescrito
     }
 
     public Television(double precioBase, String color, char consumoEnergetico, double peso, double resolucion, boolean tdt) {
-        super(precioBase, color, consumoEnergetico, peso);
+        super(precioBase, color, consumoEnergetico, peso);//llama al constructor completo del padre
         this.resolucion = resolucion;
         this.tdt = tdt;
-        super.precioFinal();
-        precioFinal();
+        super.precioFinal();//aplica el método de precioFinal del padre
+        precioFinal();//aplica el método de precioFinal propio sobreescrito
     }
 
     //métodos

@@ -10,6 +10,7 @@ import static com.sofkau.tallerjava.TallerMain.sc;
 
 public class Funciones {
 
+    //Ejercicio 1 y 2
     public static void numeroMayor (int numero1, int numero2){
         if (numero1 > numero2) {
             System.out.println("El mayor es " + numero1);
@@ -19,16 +20,16 @@ public class Funciones {
             System.out.println("Los números son iguales");
         }
     }
-
+    //Ejercicio 3
     public static double areaCirculo(double radio) {
         return Math.PI * Math.pow(radio, 2);
     }
-
+    //Ejercicio 4
     public static double agregarIVA(double precio) {
         final double IVA = precio * 0.21;
         return precio + IVA;
     }
-
+    //Ejercicio 5
     public static List<ArrayList<Integer>> parImparWhile(int numInicial, int numFinal) {
         List<ArrayList<Integer>> resultado = new ArrayList<>();
         ArrayList<Integer> pares = new ArrayList<>();
@@ -48,7 +49,7 @@ public class Funciones {
         resultado.add(impares);
         return resultado;
     }
-
+    //Ejercicio 6
     public static List<ArrayList<Integer>> parImparFor(int numInicial, int numFinal) {
         List<ArrayList<Integer>> resultado = new ArrayList<>();
         ArrayList<Integer> pares = new ArrayList<>();
@@ -64,15 +65,11 @@ public class Funciones {
         resultado.add(impares);
         return resultado;
     }
-
-    public static double numeroPositivo(double numero) {
-        if (numero >= 0) {
-            return numero;
-        } else {
-            return -1;
-        }
+    //Ejercicio 7
+    public static boolean numeroPositivo(double numero) {
+        return numero >= 0;
     }
-
+    //Ejercicio 8
     public static void diaLaboral(String dia) {
         dia = dia.toLowerCase();
         switch (dia) {
@@ -102,23 +99,23 @@ public class Funciones {
                 break;
         }
     }
-
+    //Ejercicio 9
     public static void reemplazarYConcatenar(String frase) {
         String fraseInicial = "La sonrisa sera la mejor arma contra la tristeza";
-        fraseInicial = fraseInicial.replace("a", "e");
+        fraseInicial = fraseInicial.replace("a", "e"); //reemplazar a por e
         System.out.println(fraseInicial);
-        String fraseFinal = fraseInicial + frase;
+        String fraseFinal = fraseInicial + frase; //concatenar con frase nueva
         System.out.println(fraseFinal);
     }
-
+    //Ejercicio 10
     public static void eliminarEspacios(String frase) {
         System.out.println(frase.replace(" ", ""));
     }
-
+    //Ejercicio 11
     public static void longitudYContarCaracteres(String frase) {
         frase = frase.toLowerCase();
-        System.out.println(frase.length());
-        String vocales = "aeiou";
+        System.out.println(frase.length()); //longitud
+        String vocales = "aeiou"; //para buscar char a char si está en el string de vocales
         for (char a : frase.toCharArray()) {
             if (!vocales.contains(String.valueOf(a))) {
                 frase = frase.replace(String.valueOf(a), "");
@@ -126,7 +123,7 @@ public class Funciones {
         }
         System.out.println("La frase tiene " + frase.length() + " vocales");
     }
-
+    //Ejercicio 12
     public static void compararDosPalabras(String palabra1, String palabra2) {
         String palabraMenor;
         String difPalabra1 = "";
@@ -150,22 +147,22 @@ public class Funciones {
             System.out.println("Palabra 2: " + difPalabra2);
         }
     }
-
+    //Ejercicio 13
     public static void fechaYHoraActual(){
-        LocalDateTime fechaActual = LocalDateTime.now();
-        String formatoFecha = "(yyyy/MM/dd)(HH:MM:SS)";
-        DateTimeFormatter formato = DateTimeFormatter.ofPattern(formatoFecha);
-        String fechaFormateada = fechaActual.format(formato);
+        LocalDateTime fechaActual = LocalDateTime.now(); //fecha y hora actual formato predeterminado
+        String formatoFecha = "(yyyy/MM/dd)(HH:mm:ss)"; //formato requerido
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern(formatoFecha); //crear el formato
+        String fechaFormateada = fechaActual.format(formato); //aplicar formato
         System.out.println(fechaFormateada);
     }
-
+    //Ejercicio 14
     public static void hastaMil(int numero) {
         while (numero <= 1000) {
             System.out.println(numero);
             numero += 2;
         }
     }
-
+    //Ejercicio 16
     public static void ejercicio16(){
         System.out.print("Ingrese el nombre de la persona: ");
         String nombre = sc.nextLine();
@@ -254,7 +251,7 @@ public class Funciones {
 
         System.out.println(personaVacia);
     }
-
+    //Ejercicio 17
     public static void ejercicio17(){
 
         Lavadora lav1 = new Lavadora(100, "negro", 'D', 90, 35);
@@ -274,7 +271,7 @@ public class Funciones {
         double precioLav = 0;
         double precioTotal = 0;
         for (Electrodomestico electrodomestico : electrodomesticos){
-            if (electrodomestico instanceof Lavadora) {
+            if (electrodomestico instanceof Lavadora) { //para saber si es tv o lavadora
                 precioLav += electrodomestico.precioBase;
             } else if (electrodomestico instanceof Television) {
                 precioTv += electrodomestico.precioBase;
@@ -286,4 +283,5 @@ public class Funciones {
         System.out.println("El precio de los televisores es: " + precioTv);
         System.out.println("El precio total es: " + precioTotal);
     }
+
 }
