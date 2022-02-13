@@ -11,7 +11,7 @@ import static com.sofkau.tallerjava.TallerMain.sc;
 public class Funciones {
 
     //Ejercicio 1 y 2
-    public static void numeroMayor (int numero1, int numero2){
+    public static void numeroMayor(int numero1, int numero2) {
         if (numero1 > numero2) {
             System.out.println("El mayor es " + numero1);
         } else if (numero1 < numero2) {
@@ -20,15 +20,18 @@ public class Funciones {
             System.out.println("Los números son iguales");
         }
     }
+
     //Ejercicio 3
     public static double areaCirculo(double radio) {
         return Math.PI * Math.pow(radio, 2);
     }
+
     //Ejercicio 4
     public static double agregarIVA(double precio) {
         final double IVA = precio * 0.21;
         return precio + IVA;
     }
+
     //Ejercicio 5
     public static List<ArrayList<Integer>> parImparWhile(int numInicial, int numFinal) {
         List<ArrayList<Integer>> resultado = new ArrayList<>();
@@ -49,6 +52,7 @@ public class Funciones {
         resultado.add(impares);
         return resultado;
     }
+
     //Ejercicio 6
     public static List<ArrayList<Integer>> parImparFor(int numInicial, int numFinal) {
         List<ArrayList<Integer>> resultado = new ArrayList<>();
@@ -65,10 +69,12 @@ public class Funciones {
         resultado.add(impares);
         return resultado;
     }
+
     //Ejercicio 7
     public static boolean numeroPositivo(double numero) {
         return numero >= 0;
     }
+
     //Ejercicio 8
     public static void diaLaboral(String dia) {
         dia = dia.toLowerCase();
@@ -99,6 +105,7 @@ public class Funciones {
                 break;
         }
     }
+
     //Ejercicio 9
     public static void reemplazarYConcatenar(String frase) {
         String fraseInicial = "La sonrisa sera la mejor arma contra la tristeza";
@@ -107,10 +114,12 @@ public class Funciones {
         String fraseFinal = fraseInicial + frase; //concatenar con frase nueva
         System.out.println(fraseFinal);
     }
+
     //Ejercicio 10
     public static void eliminarEspacios(String frase) {
         System.out.println(frase.replace(" ", ""));
     }
+
     //Ejercicio 11
     public static void longitudYContarCaracteres(String frase) {
         frase = frase.toLowerCase();
@@ -123,38 +132,62 @@ public class Funciones {
         }
         System.out.println("La frase tiene " + frase.length() + " vocales");
     }
+
     //Ejercicio 12
     public static void compararDosPalabras(String palabra1, String palabra2) {
-        String palabraMenor;
-        String difPalabra1 = "";
-        String difPalabra2 = "";
+        String similitudes = "";
+        String palabra1Dif = "";
+        String palabra2Dif = "";
         if (palabra1.equals(palabra2)) {
             System.out.println("Las palabras son iguales");
         } else {
+            System.out.println("Las palabras son diferentes:");
+            String palabraMayor;
+            String palabraMenor;
+            //Se determina cuál es la palabra más larga para iterar sobre esta
             if (palabra1.length() >= palabra2.length()) {
+                palabraMayor = palabra1;
                 palabraMenor = palabra2;
             } else {
+                palabraMayor = palabra2;
                 palabraMenor = palabra1;
             }
-            for (int i = 0; i < palabraMenor.length(); i++) {
-                if (palabra1.charAt(i) != palabra2.charAt(i)) {
-                    difPalabra1 += palabra1.charAt(i);
-                    difPalabra2 += palabra2.charAt(i);
+            for (int i = 0; i < palabraMayor.length(); i++) {
+                try {
+                    if (palabraMayor.charAt(i) == palabraMenor.charAt(i)) {
+                        similitudes += palabraMayor.charAt(i);
+                        palabra1Dif += "_";
+                        palabra2Dif += "_";
+                    } else {
+                        palabra1Dif += palabraMayor.charAt(i);
+                        palabra2Dif += palabraMenor.charAt(i);
+                        similitudes += "_";
+                    }
+                } catch (StringIndexOutOfBoundsException error) {
+                    //cuando i esté por fuera de los límites de la palabra corta agrega el resto de la palabra mayor a la diferencia
+                    String restante = palabraMayor.substring(i, palabraMayor.length());
+                    char[] restanteGuion = new char[restante.length()];
+                    Arrays.fill(restanteGuion, '_');
+                    palabra1Dif += restante;
+                    palabra2Dif += new String(restanteGuion);
+                    similitudes += new String(restanteGuion);
                 }
             }
-            System.out.println("Diferencias:");
-            System.out.println("Palabra 1: " + difPalabra1);
-            System.out.println("Palabra 2: " + difPalabra2);
+            System.out.println("Palabra  #1: " + palabra1Dif);
+            System.out.println("similitudes: " + similitudes);
+            System.out.println("Palabra  #2: " + palabra2Dif);
         }
     }
+
     //Ejercicio 13
-    public static void fechaYHoraActual(){
+    public static void fechaYHoraActual() {
         LocalDateTime fechaActual = LocalDateTime.now(); //fecha y hora actual formato predeterminado
         String formatoFecha = "(yyyy/MM/dd)(HH:mm:ss)"; //formato requerido
         DateTimeFormatter formato = DateTimeFormatter.ofPattern(formatoFecha); //crear el formato
         String fechaFormateada = fechaActual.format(formato); //aplicar formato
         System.out.println(fechaFormateada);
     }
+
     //Ejercicio 14
     public static void hastaMil(int numero) {
         while (numero <= 1000) {
@@ -162,8 +195,9 @@ public class Funciones {
             numero += 2;
         }
     }
+
     //Ejercicio 16
-    public static void ejercicio16(){
+    public static void ejercicio16() {
         System.out.print("Ingrese el nombre de la persona: ");
         String nombre = sc.nextLine();
         System.out.print("Ingrese la edad de la persona: ");
@@ -184,7 +218,7 @@ public class Funciones {
         personaVacia.setPeso(peso);
 
         int imc;
-        String mayor= "";
+        String mayor = "";
         //PersonaCompleta:
         System.out.println("Persona Completa:");
         imc = personaCompleta.calcularIMC();
@@ -251,8 +285,9 @@ public class Funciones {
 
         System.out.println(personaVacia);
     }
+
     //Ejercicio 17
-    public static void ejercicio17(){
+    public static void ejercicio17() {
 
         Lavadora lav1 = new Lavadora(100, "negro", 'D', 90, 35);
         Lavadora lav2 = new Lavadora(80, "VERDE", 'C', 79, 30);
@@ -266,11 +301,11 @@ public class Funciones {
         Television tv4 = new Television(60, 52);
         Television tv5 = new Television(40, 31);
 
-        ArrayList <Electrodomestico> electrodomesticos = new ArrayList<>(Arrays.asList(lav1, lav2, lav3, lav4, lav5, tv1, tv2, tv3, tv4, tv5));
+        ArrayList<Electrodomestico> electrodomesticos = new ArrayList<>(Arrays.asList(lav1, lav2, lav3, lav4, lav5, tv1, tv2, tv3, tv4, tv5));
         double precioTv = 0;
         double precioLav = 0;
         double precioTotal = 0;
-        for (Electrodomestico electrodomestico : electrodomesticos){
+        for (Electrodomestico electrodomestico : electrodomesticos) {
             if (electrodomestico instanceof Lavadora) { //para saber si es tv o lavadora
                 precioLav += electrodomestico.precioBase;
             } else if (electrodomestico instanceof Television) {

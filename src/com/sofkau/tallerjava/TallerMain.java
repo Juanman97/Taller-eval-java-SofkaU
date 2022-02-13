@@ -87,7 +87,6 @@ public class TallerMain {
 //        Funciones.longitudYContarCaracteres(frase);
 //
 //        //Ejercicio 12
-//        //FIXME: si las palabras son de diferente longitud sale error
 //        System.out.print("Ingrese la palabra 1 :");
 //        String palabra1 = sc.nextLine();
 //        System.out.print("Ingrese la palabra 2 :");
