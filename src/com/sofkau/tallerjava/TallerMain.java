@@ -18,7 +18,7 @@ public class TallerMain {
 //        System.out.print("Ingresar el segundo número: ");
 //        int num2 = Integer.parseInt(sc.nextLine());
 //        Funciones.numeroMayor(num1, num2);
-
+//
 //        //Ejercicio 3
 //        System.out.print("Ingrese el radio del círculo: ");
 //        double radio = Double.parseDouble(sc.nextLine());
@@ -44,14 +44,14 @@ public class TallerMain {
 //        }
 //
 //        //Ejercicio 6
-//        List<ArrayList<Integer>> resultado = Funciones.parImparFor(1, 100);
+//        List<ArrayList<Integer>> resultado1 = Funciones.parImparFor(1, 100);
 //        System.out.println("Números pares: ");
-//        for (int i : resultado.get(0)) {
+//        for (int i : resultado1.get(0)) {
 //            System.out.print(i + ", ");
 //        }
 //        System.out.println("");
 //        System.out.println("Números impares: ");
-//        for (int i : resultado.get(1)) {
+//        for (int i : resultado1.get(1)) {
 //            System.out.print(i + ", ");
 //        }
 //
@@ -78,13 +78,13 @@ public class TallerMain {
 //
 //        //Ejercicio 10
 //        System.out.println("Ingrese su frase");
-//        String frase = sc.nextLine();
-//        Funciones.eliminarEspacios(frase);
+//        String frase1 = sc.nextLine();
+//        Funciones.eliminarEspacios(frase1);
 //
 //        //Ejercicio 11
 //        System.out.println("Ingrese su frase");
-//        String frase = sc.nextLine();
-//        Funciones.longitudYContarCaracteres(frase);
+//        String frase2 = sc.nextLine();
+//        Funciones.longitudYContarCaracteres(frase2);
 //
 //        //Ejercicio 12
 //        System.out.print("Ingrese la palabra 1 :");

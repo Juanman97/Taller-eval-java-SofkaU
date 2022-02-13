@@ -1,36 +1,0 @@
-
-U
-java:S1118":Add a private constructor to hide the implicit public one.(ÙÓ°¡ùÿÿÿÿ
-d
-java:S1192é"MDefine a constant instead of duplicating this literal "En sobrepeso" 3 times.(•—ğô
-k
-java:S1192ğ"ODefine a constant instead of duplicating this literal " mayor de edad" 3 times.(Å†“èÿÿÿÿÿ
-]
-java:S1192ï"FDefine a constant instead of duplicating this literal "no es" 3 times.(ãª˜¼
-h
-java:S1192ğ"LDefine a constant instead of duplicating this literal "La persona " 3 times.(Å†“èÿÿÿÿÿ
-g
-java:S1192æ"QDefine a constant instead of duplicating this literal "En el peso ideal" 3 times.(Ä¥
-
-q
-java:S1192ã"ZDefine a constant instead of duplicating this literal "Por debajo del peso ideal" 3 times.(ˆøë›
-i
-java:S1192S"SDefine a constant instead of duplicating this literal "Es un dÃ­a laboral" 5 times.(æÖçê
-3
-java:S1643"Use a StringBuilder instead.(¤Òû
-8
-java:S1643Ÿ"Use a StringBuilder instead.(ó­¾İûÿÿÿÿ
-3
-java:S1643 "Use a StringBuilder instead.(®”‡ò
-3
-java:S1643¢"Use a StringBuilder instead.(Ö±’
-8
-java:S1643£"Use a StringBuilder instead.(ä‘Ë‘ıÿÿÿÿ
-8
-java:S1643¤"Use a StringBuilder instead.(†®¬Íúÿÿÿÿ
-8
-java:S1643«"Use a StringBuilder instead.(ÂşÀõıÿÿÿÿ
-3
-java:S1643¬"Use a StringBuilder instead.(Â‚Éú
-3
-java:S1643­"Use a StringBuilder instead.(ÈËÀ

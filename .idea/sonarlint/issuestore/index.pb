@@ -13,7 +13,3 @@ Y
 )src/com/sofkau/tallerjava/Videojuego.java,a\5\a55772213c8fc5c9a374fda6a567711adb298529
 T
 $src/com/sofkau/tallerjava/Serie.java,a\1\a16c552ca1f93de9871c0218bd2b7f6e1b32cce8
-X
-(src/com/sofkau/tallerjava/Funciones.java,9\5\95ccbe2809170f9fdb37b5ba39f07c1d21c0a663
-Y
-)src/com/sofkau/tallerjava/TallerMain.java,2\9\2972495e3693b1ca3d20ca8f69aa8165c9e38bbe
